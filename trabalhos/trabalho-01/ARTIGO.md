@@ -69,7 +69,7 @@ class Pessoa
     end
   end
 
-  def to_s # Método usado pelo método puts() para formatar a saída
+  def to_s 
     "#{@nome} (#{@idade} anos)"
   end
 end
@@ -81,16 +81,75 @@ pessoas = [
  
 puts pessoas[0]
 puts pessoas[1]
-puts pessoas[0] > pessoas[1] # O mesmo que: pessoas[0].>(pessoas[1])
+puts pessoas[0] > pessoas[1] 
 ```
-O código acima (retirado como exemplo no Wikipedia¹) cria uma classe Pessoa que possui dois atributos: nome e idade. O construtor da mesma cria um Objeto com nome "Desconhecido" e idade não definida. 
+O código acima (retirado como exemplo no Wikipedia¹) cria uma classe `Pessoa` que possui dois atributos: `nome` e `idade`. O construtor da mesma cria um Objeto com nome `"Desconhecido"` e idade não definida (uma espécie de sobrecarga). 
 
-Após ela cria uma modificação no código *Ruby* no qual define a função ">" para um comparativo de objetos da classe Pessoa que retorna true se a idade do objeto que chama essa função é maior que a do  objeto parâmetro.
+Após ela cria uma modificação no código *Ruby* no qual define a função `>` para um comparativo de objetos da classe `Pessoa` que retorna true se a idade do objeto que chama essa função é maior que a do  objeto parâmetro.
 
-Após isso ela também define o método to_s para formatar melhor a saída. 
+Após isso ela também define o método `to_s` para formatar melhor a saída. 
 
-Para finalizar ela cria dois objetos do tipo pessoa, um com nome e idade e outro apenas com a idade (recebendo o nome "Desconhecido"), imprimi os dados dos mesmos e usa a função ">" para compara-los.
+Para finalizar ela cria dois objetos do tipo pessoa, um com nome e idade e outro apenas com a idade (recebendo o nome `"Desconhecido"`), imprime os dados dos mesmos e usa a função `>` para compara-los.
 
-Para criar o código em java
+Para criar o código em *Java*, seria muito mais complexo e não teríamos o mesmo tipo de execução. Dado exemplo abaixo é possível perceber que a implementação da mesma não é prática e não possui os mesmos níveis de manipulação de objetos que em *Ruby*, além de que o código em Java é muito maior e em determinadas funções (como o `def` de Ruby) não é possível obter efeito igual em *Java*, sendo necessário uma adaptação do mesmo para determinar uma saída similar:
+
+Classe pessoa
+```java
+public Class Pessoa{
+  String nome;
+  int idade;
+  public Pessoa(String nome, int idade){
+    this.idade=idade;
+    this.nome=nome;
+  }
+  public Pessoa(int idade){
+    this.idade=idade;
+    this.nome="Desconhecido";
+  }
+  int getIdade(){
+    return idade; 
+  }
+  void setIdade (int idade){
+    this.idade = idade;
+  }
+  String getNome(){
+    return nome;
+  }
+  void setNome(){
+    this.nome=nome;
+  }
+  boolean maior (Pessoa pessoa){
+    if (this.idade> pessoa.getIdade())
+      return true;
+    else
+      return false;
+  }
+  void mostraPessoa(){
+    System.out.println(getNome()+"("+getIdade+" anos)");
+  }
+
+}
+
+```
+
+Classe principal
+```
+public class principal {
+	public static void main(String args[]) {
+		Pessoa p [] = new Pessoa[2];
+    p[1] = new Pessoa ("Ricardo",19);
+    p[2] = new Pessoa (25);
+    p[1].mostraPessoa();
+    p[2].mostraPessoa();
+    System.out.println (p[1].maior(p[2]).toString());
+	}
+}
+```
 
 # Conclusão
+
+Em observação aos exemplos, trajetória e codificação do *Ruby*, é possível dizer que é uma linguagem que consegue cumprir seus objetivos (tanto em expressividade, quanto em flexibilidade), sendo mais bem sucedida que seus antecessores, e é muito mais amigável que o *Java* em termos de criação de objetos e funcionalidades dos mesmos. 
+
+É nítido pelos exemplos supracitados, que a criação e manipulação de objetos em *Ruby* é muito mais simples tanto de ser entendida quanto de ser escrita, pois mesmo que em *Java*, devido a sua enorme gama de funções e bibliotecas consiga executar diversos tipos de funcionalidades presentes em *Ruby*, ela não pode modificar por exemplo, o *core* da linguagem como acontece em *Ruby*. Isso torna o trabalho de mostrar dados simples em algo trabalhoso ou até inviável em termos de manipulação. 
+
+Tal liberdade mostra o quanto essa linguagem tende a crescer, e junto com o framework *Ruby on Rails* ficar entre as mais populares do mercado de desenvolvimento Web, sendo forte concorrente do *Java/jsf* por conta da facilidade de obter informações e mostra-las no front-end. 
