@@ -34,10 +34,62 @@ array.each do |numero|
 end
 ```
 
-O uso de "!" na função sort da array força a variável array a guardar o resultado de sua função. é chamado de **bang**. Em *Java*, para fazermos o codigo acima, precisariamos criar uma função para manipular a array (que é um objeto em ambas). O que torna o código *Ruby* muito mais simples de se expressar.
+O uso de "!" na função sort da array força a variável array a guardar o resultado de sua função. é chamado de **bang**. Em *Java*, para fazermos o codigo acima, precisariamos criar uma função para manipular a array (que é um objeto em ambas). O que torna o código *Ruby* muito mais simples de se expressar. Outro exemplo de diferencial do *Ruby* para *Java* seria o seguinte trecho:
+
+``
+class Fixnum
+  def +(value)
+    self - value
+  end
+end
+``
+O qual expõe a flexibilidade da linguagem conforme citado anteriormente. O trecho de código acima modifica uma classe preexistente no *Ruby* e troca o sinal de + por -. Caso executasse o trecho de código:
+``
+puts 8 + 7
+
+``
+Ao invés do resultado ser "15" ele seria "1", pois na definição da função + ele subtrairia por conta do def. Explicando com outras palavras seria chamar a função "+" da variável implícita com valor 8, passando 7 como parâmetro.
 
 # Avaliação Comparativa
 
+Como descrito no item acima, a notação do Ruby é a mais simples possível de se mostrar. Até em exemplos mais complexos como abaixo é algo simples tanto de ler quanto de escrever:
 
+```
+class Pessoa
+  attr_reader :nome, :idade
+ 
+  def initialize(nome = "Desconhecido", idade)
+    @nome, @idade = nome, idade
+  end
+ 
+  def >(pessoa)
+    if self.idade > pessoa.idade
+      return true
+    else
+      return false
+    end
+  end
+
+  def to_s # Método usado pelo método puts() para formatar a saída
+    "#{@nome} (#{@idade} anos)"
+  end
+end
+ 
+pessoas = [
+            Pessoa.new("Ricardo", 19),
+            Pessoa.new(idade = 25)
+          ]
+ 
+puts pessoas[0]
+puts pessoas[1]
+puts pessoas[0] > pessoas[1] # O mesmo que: pessoas[0].>(pessoas[1])
+```
+O código acima cria uma classe Pessoa que possui dois atributos: nome e idade. O construtor da mesma cria um Objeto com nome "Desconhecido" e idade não definida. 
+
+Após ela cria uma modificação no código *Ruby* no qual define a função ">" para um comparativo de objetos da classe Pessoa que retorna true se a idade do objeto que chama essa função é maior que a do  objeto parâmetro.
+
+Após isso ela também define o método to_s para formatar melhor a saída. 
+
+Para finalizar ela
 
 # Conclusão
