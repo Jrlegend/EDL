@@ -26,13 +26,14 @@ Outro principal ponto da linguagem Ruby é sua Flexibilidade,** a qual permite q
 *Ruby* é demasiadamente mais expressivo que todas as linguagens do mercado, inclusive *Java*. Mesmo ambas sendo orientadas a objeto, como *Ruby* é similar a *Smalltalk* tudo é um objeto a forma de criação de funcionalidades se torna muito mais prática.
 No exemplo a seguir iremos criar uma array de int e organiza-la de forma crescente:
 
-'''
+```
 array = [4,65,2,293,7,18,4029,25,30]
 array.sort!
 array.each do |numero|
   puts numero
 end
-'''
+```
+
 O uso de "!" na função sort da array força a variável array a guardar o resultado de sua função. é chamado de **bang**. Em *Java*, para fazermos o codigo acima, precisariamos criar uma função para manipular a array (que é um objeto em ambas). O que torna o código *Ruby* muito mais simples de se expressar.
 
 # Avaliação Comparativa
