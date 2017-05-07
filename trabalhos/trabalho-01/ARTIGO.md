@@ -33,7 +33,7 @@ array.each do |numero|
 end
 ```
 
-O uso de "!" na função sort da array força a variável array a guardar o resultado de sua função. é chamado de **bang**. Em *Java*, para fazermos o codigo acima, precisariamos criar uma função para manipular a array (que é um objeto em ambas). O que torna o código *Ruby* muito mais simples de se expressar. Outro exemplo de diferencial do *Ruby* para *Java* seria o seguinte trecho:
+O uso de "!" na função sort da array força a variável array a guardar o resultado de sua função. é chamado de **bang**. Em *Java*, para fazermos o codigo acima, precisariamos manipular um objeto importado de uma biblioteca ou usar uma função para manipular a array (que é um objeto em ambas). O que torna o código *Ruby* muito mais simples de se expressar. Outro exemplo de diferencial do *Ruby* para *Java* seria o seguinte trecho:
 
 ```ruby
 class Fixnum
