@@ -152,3 +152,16 @@ Em observação aos exemplos, trajetória e codificação do *Ruby*, é possíve
 É nítido pelos exemplos supracitados, que a criação e manipulação de objetos em *Ruby* é muito mais simples tanto de ser entendida quanto de ser escrita, pois mesmo que em *Java*, devido a sua enorme gama de funções e bibliotecas consiga executar diversos tipos de funcionalidades presentes em *Ruby*, ela não pode modificar por exemplo, o *core* da linguagem como acontece em *Ruby*. Isso torna o trabalho de mostrar dados simples em algo trabalhoso ou até inviável em termos de manipulação. 
 
 Tal liberdade mostra o quanto essa linguagem tende a crescer, e junto com o framework *Ruby on Rails* ficar entre as mais populares do mercado de desenvolvimento Web, sendo forte concorrente do *Java/jsf* por conta da facilidade de obter informações e mostra-las no front-end. 
+
+
+# Referências
+https://www.ruby-lang.org/pt/about/
+http://tryruby.org
+https://www.caelum.com.br/apostila-ruby-on-rails/
+¹https://pt.wikipedia.org/wiki/Ruby_(linguagem_de_programação)
+http://blog.locaweb.com.br/artigos/metaprogramacao-com-ruby-como-mudar-o-comportamento-da-linguagem/
+https://learnrubythehardway.org/book/ex32.html
+http://www.guj.com.br/t/como-criar-e-inicializar-um-array-de-objetos/68081 (Java)
+
+
+
