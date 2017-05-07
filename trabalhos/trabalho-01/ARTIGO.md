@@ -114,7 +114,7 @@ public Class Pessoa{
   String getNome(){
     return nome;
   }
-  void setNome(){
+  void setNome(String nome){
     this.nome=nome;
   }
   boolean maior (Pessoa pessoa){
