@@ -155,12 +155,18 @@ Tal liberdade mostra o quanto essa linguagem tende a crescer, e junto com o fram
 
 
 # Referências
-https://www.ruby-lang.org/pt/about/
-http://tryruby.org
-https://www.caelum.com.br/apostila-ruby-on-rails/
-¹https://pt.wikipedia.org/wiki/Ruby_(linguagem_de_programação)
-http://blog.locaweb.com.br/artigos/metaprogramacao-com-ruby-como-mudar-o-comportamento-da-linguagem/
-https://learnrubythehardway.org/book/ex32.html
+https://www.ruby-lang.org/pt/about/ (Site oficial do Ruby em pt-br)
+
+http://tryruby.org (Primeiros passos para entender Ruby)
+
+https://www.caelum.com.br/apostila-ruby-on-rails/ (Apostila de Ruby on Rails da Caelum)
+
+¹https://pt.wikipedia.org/wiki/Ruby_(linguagem_de_programação) (História do Ruby e código do exemplo ¹)
+
+http://blog.locaweb.com.br/artigos/metaprogramacao-com-ruby-como-mudar-o-comportamento-da-linguagem/ (Mudando comportamento da Linguagem Ruby)
+
+https://learnrubythehardway.org/book/ex32.html (Loops e Arrays em Ruby)
+
 http://www.guj.com.br/t/como-criar-e-inicializar-um-array-de-objetos/68081 (Java)
 
 
