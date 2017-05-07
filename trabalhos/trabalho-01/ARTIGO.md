@@ -26,7 +26,7 @@ Outro principal ponto da linguagem Ruby é sua Flexibilidade,** a qual permite q
 *Ruby* é demasiadamente mais expressivo que todas as linguagens do mercado, inclusive *Java*. Mesmo ambas sendo orientadas a objeto, como *Ruby* é similar a *Smalltalk* tudo é um objeto a forma de criação de funcionalidades se torna muito mais prática.
 No exemplo a seguir iremos criar uma array de int e organiza-la de forma crescente:
 
-```
+```ruby
 array = [4,65,2,293,7,18,4029,25,30]
 array.sort!
 array.each do |numero|
@@ -36,25 +36,24 @@ end
 
 O uso de "!" na função sort da array força a variável array a guardar o resultado de sua função. é chamado de **bang**. Em *Java*, para fazermos o codigo acima, precisariamos criar uma função para manipular a array (que é um objeto em ambas). O que torna o código *Ruby* muito mais simples de se expressar. Outro exemplo de diferencial do *Ruby* para *Java* seria o seguinte trecho:
 
-``
+```ruby
 class Fixnum
   def +(value)
     self - value
   end
 end
-``
+```
 O qual expõe a flexibilidade da linguagem conforme citado anteriormente. O trecho de código acima modifica uma classe preexistente no *Ruby* e troca o sinal de + por -. Caso executasse o trecho de código:
-``
+```ruby
 puts 8 + 7
-
-``
+```
 Ao invés do resultado ser "15" ele seria "1", pois na definição da função + ele subtrairia por conta do def. Explicando com outras palavras seria chamar a função "+" da variável implícita com valor 8, passando 7 como parâmetro.
 
 # Avaliação Comparativa
 
 Como descrito no item acima, a notação do Ruby é a mais simples possível de se mostrar. Até em exemplos mais complexos como abaixo é algo simples tanto de ler quanto de escrever:
 
-```
+```ruby
 class Pessoa
   attr_reader :nome, :idade
  
@@ -84,12 +83,14 @@ puts pessoas[0]
 puts pessoas[1]
 puts pessoas[0] > pessoas[1] # O mesmo que: pessoas[0].>(pessoas[1])
 ```
-O código acima cria uma classe Pessoa que possui dois atributos: nome e idade. O construtor da mesma cria um Objeto com nome "Desconhecido" e idade não definida. 
+O código acima (retirado como exemplo no Wikipedia¹) cria uma classe Pessoa que possui dois atributos: nome e idade. O construtor da mesma cria um Objeto com nome "Desconhecido" e idade não definida. 
 
 Após ela cria uma modificação no código *Ruby* no qual define a função ">" para um comparativo de objetos da classe Pessoa que retorna true se a idade do objeto que chama essa função é maior que a do  objeto parâmetro.
 
 Após isso ela também define o método to_s para formatar melhor a saída. 
 
-Para finalizar ela
+Para finalizar ela cria dois objetos do tipo pessoa, um com nome e idade e outro apenas com a idade (recebendo o nome "Desconhecido"), imprimi os dados dos mesmos e usa a função ">" para compara-los.
+
+Para criar o código em java
 
 # Conclusão
