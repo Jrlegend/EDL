@@ -1,4 +1,3 @@
-(Não é necessário seguir a estrutura a seguir...)
 
 # Introdução
 
