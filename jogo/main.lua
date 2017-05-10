@@ -87,10 +87,9 @@ function love.update (dt)
 	
     if collides(p2, p3) then
 		if collidesX(p2,p3) then
+			p3.vx=(10*(p3.x-((p2.w/2)+p2.x)))
 			if ((p2.x+(p2.w/2)<p3.x+p3.w) and p3.vx<0) or ((p2.x+(p2.w/2)>p3.x+p3.w) and p3.vx>0) then
-				p3.vx=(-1)*(10*(p3.x-((p2.w/2)+p2.x)))
-			else
-				p3.vx=(10*(p3.x-((p2.w/2)+p2.x)))
+				p3.vx=(-1)*p3.vx
 			end
 		elseif	collidesY(p2,p3) then
 			p3.vx=p3.vx*(-1)
