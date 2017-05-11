@@ -3,8 +3,11 @@ function love.load ()
     p2 = { x=500, y=550, w=100, h=10 }
 	p3 = { x=500, y=539, w=10, h=10, vy=190, vx=190}
 	a = {}
-    for i=1, 14 do
-      a[i] = { x=i*50, y=30, w=30, h=10}
+    for i=1, 6 do
+		a[i]={}
+		for j=1,14 do
+           a[i][j] = { x=j*50, y=i*30, w=30, h=10}
+		end
     end
 	
 	isPressed=0
@@ -26,9 +29,20 @@ function love.keypressed (key)
 			p3.x = p3.x + 5
 			p3.y = p3.y - 5
 		end	
-    end
+    elseif key == 'a' and isPressed==0 then
+		isPressed=1
+		p3.x = 550
+		p3.y = 539
+		p2.x = 500
+		p2.y = 550
+		p3.vx = 190
+		p3.vy = 190
+		val = 0
+	end
 end
-
+function isBorderDown(o)
+	return (o.y>=610)
+end
 function isBorderLeft(o)
 	return (o.x>=5)
 end
@@ -94,18 +108,25 @@ function love.update (dt)
 		elseif	collidesY(p2,p3) then
 			p3.vx=p3.vx*(-1)
 		end
-		p3.vy=p3.vy*(-1.1)
+		p3.vy=p3.vy*(-1.03)
 		
     end
 	
-	for i=1, 14 do
-		if collides(a[i], p3) then
-			if	collidesY(a[i],p3) then
-				p3.vx=p3.vx*(-1)
-			elseif collidesX(p2,p3) then
-				val = val +1
+	for i=1, 6 do
+		for j=1, 14 do
+			if collides(a[i][j], p3) then
+				if	collidesX(a[i][j],p3) then
+					p3.vy=p3.vy*(-1.03)
+				elseif collidesY(a[i][j],p3) then
+					p3.vx=p3.vx*(-1)
+					p3.vy=p3.vy*(1.03)
+				end
+				a[i][j].x=0
+				a[i][j].y=0
+				a[i][j].w=0
+				a[i][j].h=0
+				val=val+1
 			end
-			p3.vy=p3.vy*(-1)
 		end
 	end
 	
@@ -119,8 +140,16 @@ function love.draw ()
     love.graphics.rectangle('fill', p3.x,p3.y, p3.w,p3.h)
 	love.graphics.setColor(255, 255, 255, 255)
     love.graphics.print("Pontuação: "..val, 50, 570, 0, 1.2, 1.2)
-	for i=1, 14 do
-		love.graphics.rectangle('fill', a[i].x,a[i].y, a[i].w,a[i].h)
+	for i=1, 6 do
+		for j=1, 14 do
+			love.graphics.rectangle('fill', a[i][j].x,a[i][j].y, a[i][j].w,a[i][j].h)
+		end
+	end
+	if isBorderDown(p3) then
+		isPressed=0
+		love.graphics.print("Pontuação: "..val, 200, 200, 0, 1.2, 1.2)
+		love.graphics.print("GAME OVER! \n Pressione a letra A para recomeçar ", 200, 300, 0, 1.2, 1.2)
 	end
 
 end
+
