@@ -1,7 +1,7 @@
+-- Grupo: Nilton Junior e Carolina Aquino
 function love.load ()
-    p1 = { x=50,  y=200, w=100, h=100, vy=30, ay=20 }
-    p2 = { x=500, y=550, w=100, h=10 }
-	p3 = { x=500, y=539, w=10, h=10, vy=190, vx=190}
+    p2 = { x=350, y=550, w=100, h=10 }
+	p3 = { x=400, y=250, w=10, h=10, vy=-190,vx = 1}
 	a = {}
     for i=1, 6 do
 		a[i]={}
@@ -26,18 +26,8 @@ function love.keypressed (key)
 	elseif key == 'space' then
         if isPressed==0 then
 			isPressed=1
-			p3.x = p3.x + 5
-			p3.y = p3.y - 5
-		end	
+	end	
     elseif key == 'a' and isPressed==0 then
-		isPressed=1
-		p3.x = 550
-		p3.y = 539
-		p2.x = 500
-		p2.y = 550
-		p3.vx = 190
-		p3.vy = 190
-		val = 0
 		love.load()
 	end
 end
@@ -109,7 +99,7 @@ function love.update (dt)
 		elseif	collidesY(p2,p3) then
 			p3.vx=p3.vx*(-1)
 		end
-		p3.vy=p3.vy*(-1.03)
+		p3.vy=p3.vy*(-1.01)
 		
     end
 	
@@ -117,10 +107,10 @@ function love.update (dt)
 		for j=1, 14 do
 			if collides(a[i][j], p3) then
 				if	collidesX(a[i][j],p3) then
-					p3.vy=p3.vy*(-1.03)
+					p3.vy=p3.vy*(-1.01)
 				elseif collidesY(a[i][j],p3) then
 					p3.vx=p3.vx*(-1)
-					p3.vy=p3.vy*(1.03)
+					p3.vy=p3.vy*(1.01)
 				end
 				a[i][j].x=0
 				a[i][j].y=0
@@ -141,6 +131,10 @@ function love.draw ()
     love.graphics.rectangle('fill', p3.x,p3.y, p3.w,p3.h)
 	love.graphics.setColor(255, 255, 255, 255)
     love.graphics.print("Pontuação: "..val, 50, 570, 0, 1.2, 1.2)
+	love.graphics.print("Quadrados Restantes: ".. 84-val, 250, 570, 0, 1.2, 1.2)
+	love.graphics.print("Velocidade: ".. math.floor(p3.vy), 500, 570, 0, 1.2, 1.2)
+
+
 	for i=1, 6 do
 		for j=1, 14 do
 			love.graphics.rectangle('fill', a[i][j].x,a[i][j].y, a[i][j].w,a[i][j].h)
@@ -148,8 +142,13 @@ function love.draw ()
 	end
 	if isBorderDown(p3) then
 		isPressed=0
-		love.graphics.print("Pontuação: "..val, 200, 200, 0, 1.2, 1.2)
-		love.graphics.print("GAME OVER! \n Pressione a letra A para recomeçar ", 200, 300, 0, 1.2, 1.2)
+		love.graphics.print("Pontuação: "..val, 325, 250, 0, 1.2, 1.2)
+		love.graphics.print("GAME OVER!", 330, 300, 0, 1.2, 1.2)
+		love.graphics.print("Pressione a letra A para recomeçar", 250, 320, 0, 1.2, 1.2)
+	end
+		if val==84 then
+		isPressed=0
+		love.graphics.print("Parabéns, voce ganhou !!!! Pressione a letra A para recomeçar", 150, 320, 0, 1.2, 1.2)
 	end
 
 end
