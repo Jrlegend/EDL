@@ -38,6 +38,7 @@ function love.keypressed (key)
 		p3.vx = 190
 		p3.vy = 190
 		val = 0
+		love.load()
 	end
 end
 function isBorderDown(o)
@@ -152,4 +153,3 @@ function love.draw ()
 	end
 
 end
-
