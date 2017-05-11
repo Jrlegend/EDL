@@ -44,7 +44,7 @@ end
 ```
 O qual expõe a flexibilidade da linguagem conforme citado anteriormente. O trecho de código acima modifica uma classe preexistente no *Ruby* e troca o sinal de + por -. Caso executasse o trecho de código:
 ```ruby
-puts 8 + 7
+puts 8 + 7 
 ```
 Ao invés do resultado ser "15" ele seria "1", pois na definição da função + ele subtrairia por conta do def. Explicando com outras palavras seria chamar a função "+" da variável implícita com valor 8, passando 7 como parâmetro. Tal funcionalidade não existe na linguagem *Java*, e a mesma pode ser explorada de diversas maneiras diferentes tornando mais fácil a vida do programador *Ruby*
 
@@ -132,7 +132,7 @@ public Class Pessoa{
 ```
 
 Classe principal
-```
+```java
 public class principal {
 	public static void main(String args[]) {
 		Pessoa p [] = new Pessoa[2];
