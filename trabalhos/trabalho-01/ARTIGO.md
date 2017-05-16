@@ -15,7 +15,7 @@ Mais tarde, em 2005 surgiu o **Ruby on Rails**, framework de aplicações web de
 
 Sua versão mais atual estável é a 2.3.1, lançada em 26/4/2016.
 
-# Classificação
+# Classificação 
 
 **Ruby é uma linguagem de script orientada a objetos, multiparadigma com tipagem dinâmica e forte**. Similar ao *Smalltalk* pois uma de suas origens foi a mesma, tudo em *Ruby* é um objeto. Segundo o próprio site oficial de *Ruby*: *"Cada parcela de informação e código podem receber as suas próprias propriedades e ações. A Programação orientada a objetos denomina as propriedades como variáveis de instância e as ações como métodos. "*. Tanto char, int, float, double e outros tipos de variáveis as quais em outras linguagens não seriam em objetos, em *Ruby* as mesmas são. 
 Outro principal ponto da linguagem Ruby é sua Flexibilidade,** a qual permite que seus programadores alterem partes da linguagem, redefinindo-as, acrescentando-as ou até removendo as mesmas**. Em quesito algum o *Ruby* tenta restringir o programador, sendo um ponto diferencial da linguagem.
@@ -110,6 +110,7 @@ public Class Pessoa{
   }
   void setIdade (int idade){
     this.idade = idade;
+
   }
   String getNome(){
     return nome;
