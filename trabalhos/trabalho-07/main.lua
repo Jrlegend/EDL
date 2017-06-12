@@ -2,6 +2,15 @@ function love.load ()
     p2 = { x=350, y=550, w=100, h=10 }
 	p3 = { x=400, y=250, w=10, h=10, vy=-190,vx = 1}
 	bonus = {}
+	[[--trabalho-07
+		Array: bonus
+		Escopo: o array bonus tem escopo global
+		Tempo de vida: desde o load do jogo até o fim deste.
+		Alocação: Aloca caso a variável val seja múltiplo de 7.
+		Desalocação: Desaloca quando o quadrado é atingido pela barra do jogador ou sai da tela de jogo.
+	
+	
+	--]]
 	quadrados=84
 	a = {}
     for i=1, 6 do
