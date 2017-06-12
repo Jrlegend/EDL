@@ -2,14 +2,12 @@ function love.load ()
     p2 = { x=350, y=550, w=100, h=10 }
 	p3 = { x=400, y=250, w=10, h=10, vy=-190,vx = 1}
 	bonus = {}
-	[[--trabalho-07
+	--[[trabalho-07
 		Array: bonus
 		Escopo: o array bonus tem escopo global
 		Tempo de vida: desde o load do jogo até o fim deste.
 		Alocação: Aloca caso a variável val seja múltiplo de 7.
 		Desalocação: Desaloca quando o quadrado é atingido pela barra do jogador ou sai da tela de jogo.
-	
-	
 	--]]
 	quadrados=84
 	a = {}
@@ -23,7 +21,7 @@ function love.load ()
 	isPressed=0
 	val = 0
 	hit=0
-	exist=0;
+	exist=0
 
 end
 
@@ -86,15 +84,15 @@ function alloc(x,y,w,h,vy) --aloca em novo bonus
 	bonus.y=y
 	bonus.w=w
 	bonus.h=h
-	bonus.vy=h
+	bonus.vy=vy
 
-end;
+end
 
 function love.update (dt)
     if isPressed==1 then
 		p3.y = p3.y - p3.vy*dt
 		p3.x = p3.x + p3.vx*dt
-		if isBorderLeft(p3)==false or isBorderRight(p3)==false  then
+		if isBorderLeft(p3)==false or isBorderRight(p3)==false then
 			p3.vx=p3.vx*(-1)
 		end	
 		if isBorderTop(p3)==false then
@@ -104,7 +102,7 @@ function love.update (dt)
 	
 	--função que verifica colisão do objeto a ser removido
 	if exist==1 then
-		bonus.y = bonus.y + bonus.vy*0.2;
+		bonus.y = bonus.y + bonus.vy*0.2
 		if collides(p2,bonus) then
 			exist=0
 			hit=0
@@ -122,8 +120,6 @@ function love.update (dt)
 		end
 	end
 	
-	
-	
 	if love.keyboard.isDown("left") then
 		if isBorderLeft(p2) then
 			if love.keyboard.isDown("lshift") then
@@ -133,6 +129,7 @@ function love.update (dt)
 			end
 		end	
     end
+	
 	if love.keyboard.isDown("right") then
         if isBorderRight(p2) then
 			if love.keyboard.isDown("lshift") then
@@ -170,8 +167,7 @@ function love.update (dt)
 				a[i][j].w=0
 				a[i][j].h=0
 				val=val+1
-				quadrados=quadrados-1
-				--condição do objeto existir
+				quadrados=quadrados-1 --condição do objeto existir
 				if val % 7 ==0 and exist==0 then
 					hit=1
 					alloc(math.random(0,600),300,15,15,10)
@@ -212,7 +208,7 @@ function love.draw ()
 		love.graphics.print("GAME OVER!", 330, 300, 0, 1.2, 1.2)
 		love.graphics.print("Pressione a letra A para recomecar", 250, 320, 0, 1.2, 1.2)
 	end
-		if quadrados==0 then
+	if quadrados==0 then
 		isPressed=0
 		love.graphics.print("Parabens, voce ganhou !!!! Pressione a letra A para recomecar", 150, 320, 0, 1.2, 1.2)
 	end
