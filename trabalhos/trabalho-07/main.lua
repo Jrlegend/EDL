@@ -32,7 +32,7 @@ function love.keypressed (key)
 		end	
     elseif key == 'right' then
         if isBorderRight(p2) then
-			p2.x = p2.x + 5
+			p2.x = p2.x + 5 
 		end	
 	elseif key == 'space' then
         if isPressed==0 then
