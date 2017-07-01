@@ -214,6 +214,7 @@ function love.draw ()
 	if isBorderDown(p3) then
 		isPressed=0
 		exist=0
+		hit=0
 		erase()
 		love.graphics.print("Pontuacao: "..val, 325, 250, 0, 1.2, 1.2)
 		love.graphics.print("GAME OVER!", 330, 300, 0, 1.2, 1.2)
