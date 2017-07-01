@@ -9,6 +9,7 @@ function love.load ()
 		Alocação: Aloca caso a variável val seja múltiplo de 7.
 		Desalocação: Desaloca quando o quadrado é atingido pela barra do jogador ou sai da tela de jogo.
 	--]]
+	
 	quadrados=84
 	a = {}
     for i=1, 6 do
@@ -71,21 +72,29 @@ function collidesY (o1, o2)
 end
 
 function erase() --desaloca valores após o bloco de bonus alcançar a borda inferior ou ser acertado pela barra
-	bonus.x=nil
-	bonus.y=nil
-	bonus.w=nil
-	bonus.h=nil
-	bonus.vy=nil
+	j= table.getn(bonus)
+	for i=1,j do
+		table.remove(bonus)
+	end
 
 end
 
 function alloc(x,y,w,h,vy) --aloca em novo bonus
-	bonus.x=x
-	bonus.y=y
-	bonus.w=w
-	bonus.h=h
-	bonus.vy=vy
+	table.insert(bonus,x)
+	table.insert(bonus,y)
+	table.insert(bonus,w)
+	table.insert(bonus,h)
+	table.insert(bonus,vy)
+end
 
+
+function collidesB (o1, o2) --função para checar colisão da table bonus
+    return (o1.x+o1.w >= o2[1]) and (o1.x <= o2[1]+o2[3]) and
+           (o1.y+o1.h >= o2[2]) and (o1.y <= o2[2]+o2[4])
+end
+
+function isBorderDownB(o) --função para testar borda do bonus
+	return (o[2]>=610)
 end
 
 function love.update (dt)
@@ -102,8 +111,8 @@ function love.update (dt)
 	
 	--função que verifica colisão do objeto a ser removido
 	if exist==1 then
-		bonus.y = bonus.y + bonus.vy*0.2
-		if collides(p2,bonus) then
+		bonus[2] = bonus[2] + bonus[5]*0.2
+		if collidesB(p2,bonus) then
 			exist=0
 			hit=0
 			val=val+50
@@ -113,7 +122,7 @@ function love.update (dt)
 	
 	--função que verifica colisão do objeto a ser removido
 	if exist ==1 then
-		if isBorderDown(bonus) then
+		if isBorderDownB(bonus) then
 			exist=0
 			hit=0
 			erase()
@@ -197,13 +206,15 @@ function love.draw ()
 	if hit==1 then
 		exist=1
 		love.graphics.setColor(255, 255, 0, 255)
-		love.graphics.rectangle('fill', bonus.x,bonus.y, bonus.w,bonus.h)
+		love.graphics.rectangle('fill', bonus[1],bonus[2], bonus[3],bonus[4])
 		love.graphics.print("PEGUE O QUADRADO DE BONUS: ",250, 5, 0, 1.2, 1.2)
 
 	end
 
 	if isBorderDown(p3) then
 		isPressed=0
+		exist=0
+		erase()
 		love.graphics.print("Pontuacao: "..val, 325, 250, 0, 1.2, 1.2)
 		love.graphics.print("GAME OVER!", 330, 300, 0, 1.2, 1.2)
 		love.graphics.print("Pressione a letra A para recomecar", 250, 320, 0, 1.2, 1.2)
