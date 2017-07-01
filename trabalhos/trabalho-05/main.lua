@@ -3,10 +3,10 @@ function love.load ()
 	p3 = { x=400, y=250, w=10, h=10, vy=-190,vx = 1}
   
   -- 1º Exemplo
-  -- Nome: Variável "vy"
+  -- Nome: Variável "y"
 	-- Propriedade: Valor
 	-- Binding Time: Compilação
-	-- Explicação: O valor "vy" é atribuído em tempo de compilação. Por ser dinâmico, ele pode ser alterado durante execução.
+	-- Explicação: O valor "y" da linha 3 é atribuído em tempo de compilação, não sendo alterado durante sua execução
   a = {}
     for i=1, 6 do
 
@@ -30,10 +30,11 @@ function love.load ()
   -- Nome: Variável "isPressed"
 	-- Propriedade: Endereço
 	-- Binding Time: Compilação
-	-- Explicação: A variável "val" tem seu endereço definido em tempo de compilação. A mesma é global, 
-  -- podendo ser modificada a qualquer momento.
+	-- Explicação: A variável "isPressed" tem seu endereço definido em tempo de compilação. A mesma é global.
   
 	val = 0
+	
+	
 end
 
 function love.keypressed (key)
@@ -69,6 +70,13 @@ function isBorderTop(o)
 end
 
 function collides (o1, o2)
+	
+	-- 4º Exemplo
+        -- Nome: variável "o1"
+	-- Propriedade: Endereço
+	-- Binding Time: Execução
+	-- Explicação: o1, sendo uma variável local, tem seu endereço definido em tempo de execução.
+	
     return (o1.x+o1.w >= o2.x) and (o1.x <= o2.x+o2.w) and
            (o1.y+o1.h >= o2.y) and (o1.y <= o2.y+o2.h)
 end
@@ -80,11 +88,6 @@ end
 function collidesY (o1, o2)
     return (o1.y+o1.h >= o2.y) and (o1.y <= o2.y+o2.h)
     
-    -- 4º Exemplo
-    -- Nome: Operator "and"
-		-- Propriedade: Semântica
-		-- Binding Time: Execução
-		-- Explicação: a porta lógica and apenas ocorre quando a função é chamada, ou seja, em tempo de execução. Ela retorna um boolean.
     
     
 end
@@ -139,12 +142,9 @@ function love.update (dt)
 			p3.vx=p3.vx*(-1)
 		end
 		p3.vy=p3.vy*(-1.01)
+	
+     
         
-        -- 6º Exemplo
-        -- Nome: variável "vy"
-				-- Propriedade: Valor
-				-- Binding Time: Execução
-				-- Explicação: o valor vy de p3 será multiplicado conforme o jogo avança, em tempo de execução.
 		
     end
 	
@@ -162,6 +162,15 @@ function love.update (dt)
 				a[i][j].w=0
 				a[i][j].h=0
 				val=val+1
+				
+				-- 6º Exemplo
+        			-- Nome: variável "val"
+				-- Propriedade: Valor
+				-- Binding Time: Execução
+				-- Explicação: o valor val será incrementado em 1 conforme o as colisões acontecem, 
+				-- em tempo de execução.
+				
+				
 			end
 		end
 	end
