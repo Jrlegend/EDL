@@ -7,7 +7,7 @@
 
 O Ruby teve seu nascimento no ano de **1993**, mas foi apresentado ao público em 1995 por **"Matz" (Yukihiro Matsumoto)**, seu criador. Teve origem a partir de algumas linguagens favoritas de Matz: **Perl, Smalltalk, Eiffel, Ada e Lisp**. Matz buscava uma linguagem que fosse mais poderosa que *Perl* e mais orientada a objetos que a linguagem *Python* (e por conta disso possui grande similaridade com essa última em diversos aspectos, como a orientação a objetos mais abrangente).
 
-Desde sua apresentação ao mundo em 1995, O *Ruby* angariou diversos programadores por conta de sua simplicidade e poder de desenvolvimento, se tornando uma das linguagens que mais cresce no mercado de acordo com o índice *TIOBE*, a qual consta em **11º lugar em seu ranking de popularidade** (Jun/2017).
+Desde sua apresentação ao mundo em 1995, O *Ruby* angariou diversos programadores por conta de sua simplicidade e poder de desenvolvimento, se tornando uma das linguagens que mais cresce no mercado de acordo com o índice *TIOBE*, a qual consta em **11º lugar em seu ranking de popularidade** (Jun /2017).
 
 Em 1999 lançou-se a versão 1.3 da linguagem, e junto a esta iniciou-se o **Ruby-Talk** que é uma lista de discussão sobre *Ruby*. Isso fez com que aumentasse a popularidade da linguagem fora do Japão. Tanto que um ano após, **em 2000 foi lançado o primeiro livro sobre a programação Ruby** , *Programming Ruby*, o qual inicialmente foi pago e depois disponibilizado para o público em geral.
 
