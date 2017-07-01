@@ -55,8 +55,8 @@ function love.load ()
 end
 
 function pontoBonus () 
---[[TRABALHO-08 a COROUTINE funciona da seguinte forma: a cada acerto (hit) da bolinha nos blocos, é criado uma nova variável i com o valor de 
-(i*2). quando o bonus é chamado, o valor do bonus será um valor randomico entre essas variáveis.
+--[[TRABALHO-08 a COROUTINE funciona da seguinte forma: a cada acerto (hit) da bolinha nos blocos, é chamado a variável i com o valor de 
+(i*2). quando o bonus é chamado, o valor do bonus será um valor randomico entre essas variáveis da array.
 --]]
     local i = 10
     return function () 
