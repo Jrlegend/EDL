@@ -1,13 +1,13 @@
 
 # Introdução
 
-**Ruby** é uma linguagem que prima pela simplicidade e expressividade de deus códigos ou seja, possui facilidade tanto em sua leitura quanto em sua escrita, se tornando uma programação simples e ao mesmo tempo complexa em sua estrutura devido as várias funcionalidades que possui. Além disso, é uma linguagem em que tudo é um objeto, tendo suas próprias propriedades e ações.
+**Ruby**, tornado público em 1995, é uma linguagemque possui como objetivo e diferencial sua simplicidade, expressividade,legibilidade e redigibilidade ou seja, possui facilidade tanto em sua leitura quanto em sua escrita, se tornando uma programação simples e ao mesmo tempo com uma estrutura complexa devido as várias funcionalidades que possui. Ela parte do conceito de que tudo é um objeto, possuindo particularidades e ações relacionadas a eles.
 
 # Origens e Influências
 
-O Ruby teve seu nascimento no ano de 1993, e foi apresentado ao público em 1995 por **"Matz" (Yukihiro Matsumoto)**, seu criador. Teve origem a partir das linguagens favoritas de Matz, que são **Perl, Smalltalk, Eiffel, Ada e Lisp**. Matz buscava uma linguagem que fosse mais poderosa que *Perl* e mais orientada a objetos que a linguagem *Python* (por conta disso possui grande similaridade com essa última em diversos aspectos).
+O Ruby teve seu nascimento no ano de **1993**, mas foi apresentado ao público em 1995 por **"Matz" (Yukihiro Matsumoto)**, seu criador. Teve origem a partir de algumas linguagens favoritas de Matz: **Perl, Smalltalk, Eiffel, Ada e Lisp**. Matz buscava uma linguagem que fosse mais poderosa que *Perl* e mais orientada a objetos que a linguagem *Python* (e por conta disso possui grande similaridade com essa última em diversos aspectos, como a orientação a objetos mais abrangente).
 
-Desde sua apresentação ao mundo em 1995, O *Ruby* angariou diversos programadores por conta de sua simplicidade e poder de desenvolvimento, se tornando uma das linguagens que mais cresce no mercado como no índice *TIOBE*, a qual consta em **12º lugar em seu ranking de popularidade**.
+Desde sua apresentação ao mundo em 1995, O *Ruby* angariou diversos programadores por conta de sua simplicidade e poder de desenvolvimento, se tornando uma das linguagens que mais cresce no mercado de acordo com o índice *TIOBE*, a qual consta em **11º lugar em seu ranking de popularidade** (Jun/2017).
 
 Em 1999 lançou-se a versão 1.3 da linguagem, e junto a esta iniciou-se o **Ruby-Talk** que é uma lista de discussão sobre *Ruby*. Isso fez com que aumentasse a popularidade da linguagem fora do Japão. Tanto que um ano após, **em 2000 foi lançado o primeiro livro sobre a programação Ruby** , *Programming Ruby*, o qual inicialmente foi pago e depois disponibilizado para o público em geral.
 
@@ -17,23 +17,26 @@ Sua versão mais atual estável é a 2.3.1, lançada em 26/4/2016.
 
 # Classificação 
 
-**Ruby é uma linguagem de script orientada a objetos, multiparadigma com tipagem dinâmica e forte**. Similar ao *Smalltalk* pois uma de suas origens foi a mesma, tudo em *Ruby* é um objeto. Segundo o próprio site oficial de *Ruby*: *"Cada parcela de informação e código podem receber as suas próprias propriedades e ações. A Programação orientada a objetos denomina as propriedades como variáveis de instância e as ações como métodos. "*. Tanto char, int, float, double e outros tipos de variáveis as quais em outras linguagens não seriam em objetos, em *Ruby* as mesmas são. 
+**Ruby é uma linguagem de programação:
+
+* Interpretada 
+	* *Linguagem interpretada é uma linguagem de programação em que o código fonte nessa linguagem é executado por um programa de computador chamado interpretador, que em seguida é executado pelo sistema operacional ou processador.* (Wikipedia)
+
+* Orientada a objetos
+	* *Linguagem orientada a objetos é uma linguagem de programação em que existem "objetos" com suas próprias características, funcionalidades e particularidades.*
+
+* Multiparadigma
+
+* Tipagem forte e dinâmica
+	* *Tipagem forte significa que haverá a verificação do tipo da variável em tempo de execução, em todas as linhas. Dinâmica refere-se que há a possibilidade de alteração do tipo da variável em tempo de execução*
+
+Similar ao *Smalltalk* pois uma de suas origens foi a mesma, **tudo em *Ruby* é um objeto**. Segundo o próprio site oficial de *Ruby*: *"Cada parcela de informação e código podem receber as suas próprias propriedades e ações. A Programação orientada a objetos denomina as propriedades como variáveis de instância e as ações como métodos. "*. Tanto char, int, float, double e outros tipos de variáveis as quais em outras linguagens não seriam em objetos, em *Ruby* as mesmas são. 
 Outro principal ponto da linguagem Ruby é sua Flexibilidade,** a qual permite que seus programadores alterem partes da linguagem, redefinindo-as, acrescentando-as ou até removendo as mesmas**. Em quesito algum o *Ruby* tenta restringir o programador, sendo um ponto diferencial da linguagem.
 
 # Expressividade Ruby x Java
 
-*Ruby* é demasiadamente mais expressivo que todas as linguagens do mercado, inclusive *Java*. Mesmo ambas sendo orientadas a objeto, como *Ruby* é similar a *Smalltalk* tudo é um objeto a forma de criação de funcionalidades se torna muito mais prática.
-No exemplo a seguir iremos criar uma array de int e organiza-la de forma crescente:
-
-```ruby
-array = [4,65,2,293,7,18,4029,25,30]
-array.sort!
-array.each do |numero|
-  puts numero
-end
-```
-
-O uso de "!" na função sort da array força a variável array a guardar o resultado de sua função. é chamado de **bang**. Em *Java*, para fazermos o codigo acima, precisariamos manipular um objeto importado de uma biblioteca ou usar uma função para manipular a array (que é um objeto em ambas). O que torna o código *Ruby* muito mais simples de se expressar. Outro exemplo de diferencial do *Ruby* para *Java* seria o seguinte trecho:
+*Ruby* é demasiadamente mais expressivo que todas as linguagens do mercado, inclusive a linguagem *Java*. Mesmo ambas sendo orientadas a objeto, como *Ruby* é similar a *Smalltalk* em que tudo é um objeto, a forma de criação de funcionalidades se torna muito mais prática.
+No exemplo a seguir iremos utilizar o conceito de redefinição de operadores do ruby:
 
 ```ruby
 class Fixnum
@@ -42,7 +45,7 @@ class Fixnum
   end
 end
 ```
-O qual expõe a flexibilidade da linguagem conforme citado anteriormente. O trecho de código acima modifica uma classe preexistente no *Ruby* e troca o sinal de + por -. Caso executasse o trecho de código:
+O exemplo acima demonstra a capacidade do ruby de modificar operadores, tornando a vida do programador mais fácil dependendo de seu uso.De modo mais formal,o trecho de código acima modifica uma classe preexistente no *Ruby* e efetua a reescrita do sinal de '+' por '-'. Caso executasse o trecho de código:
 ```ruby
 puts 8 + 7 
 ```
@@ -50,7 +53,7 @@ Ao invés do resultado ser "15" ele seria "1", pois na definição da função +
 
 # Avaliação Comparativa
 
-Como descrito no item acima, a notação do Ruby é a mais simples possível de se mostrar. Até em exemplos mais complexos como abaixo é algo simples tanto de ler quanto de escrever:
+Como descrito no item acima, a notação do Ruby é a mais simples possível de se mostrar. Até em exemplos mais complexos como abaixo é algo simples tanto em questão da legibilidade quanto da redigibilidade:
 
 ```ruby
 class Pessoa
@@ -148,11 +151,15 @@ public class principal {
 
 # Conclusão
 
-Em observação aos exemplos, trajetória e codificação do *Ruby*, é possível dizer que é uma linguagem que consegue cumprir seus objetivos (tanto em expressividade, quanto em flexibilidade), sendo mais bem sucedida que seus antecessores, e é muito mais amigável que o *Java* em termos de criação de objetos e funcionalidades dos mesmos. 
+Vale salientar que *Ruby* por si só não é independente em termos de programação (principalmente para Web), sendo uma espécie de "corpo" dos frameworks (Rails, Sinatra,Grape, entre outros). É demasiadamente complicado citar a linguagem sem seus frameworks, sendo que a maioria se concentra apenas no *RoR (Ruby on Rails)*.
 
-É nítido pelos exemplos supracitados, que a criação e manipulação de objetos em *Ruby* é muito mais simples tanto de ser entendida quanto de ser escrita, pois mesmo que em *Java*, devido a sua enorme gama de funções e bibliotecas consiga executar diversos tipos de funcionalidades presentes em *Ruby*, ela não pode modificar por exemplo, o *core* da linguagem como acontece em *Ruby*. Isso torna o trabalho de mostrar dados simples em algo trabalhoso ou até inviável em termos de manipulação. 
+Em observação aos exemplos, trajetória e codificação do *Ruby* definidos ao longo do artigo, é possível dizer que *Ruby* é uma linguagem que consegue cumprir seus principais objetivos (tanto em expressividade, quanto em flexibilidade), sendo mais bem sucedida que seus antecessores, e é muito mais amigável que o *Java* em termos de criação de objetos e funcionalidades dos mesmos. 
 
-Tal liberdade mostra o quanto essa linguagem tende a crescer, e junto com o framework *Ruby on Rails* ficar entre as mais populares do mercado de desenvolvimento Web, sendo forte concorrente do *Java/jsf* por conta da facilidade de obter informações e mostra-las no front-end. 
+É nítido pelos exemplos supracitados, que a criação e manipulação de objetos em *Ruby* é muito mais simples tanto de ser entendida quanto de ser escrita, pois mesmo que em *Java* ou outras linguagens, devido as suas enormes gamas de funções e bibliotecas consigam executar diversos tipos de funcionalidades presentes em *Ruby*, elas não podem modificar por exemplo, o *core* da linguagem como acontece em *Ruby*. Isso torna o trabalho de mostrar dados simples em algo trabalhoso ou até inviável em termos de manipulação. 
+
+Ademais, tal liberdade mostra o quanto essa linguagem pode crescer, e junto com o framework *Ruby on Rails* ficar entre as mais populares do mercado de desenvolvimento Web, sendo forte concorrente do *Java/jsf* por conta da facilidade de obter informações e mostra-las no front-end. 
+
+
 
 
 # Referências
