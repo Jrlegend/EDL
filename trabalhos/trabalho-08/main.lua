@@ -228,7 +228,7 @@ function love.update (dt)
 				val=val+1
 				quadrados=quadrados-1 
 				
-				if exist=0 then
+				if exist==0 then
 					--TRABALHO-08 a cada hit ele ja deixa criado o valor do bonus incrementando nas chamadas da closure
 					pos=math.random(1,5)
 					--TRABALHO-08 aloca valor de enhance ('i') em vab para usar em bonus 
